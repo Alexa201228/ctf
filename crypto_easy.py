@@ -1,0 +1,13 @@
+from pwn import xor
+from Crypto.Util.strxor import strxor
+
+
+
+key = "917b18758d85aca0bab938d2d49b877904749a8af6abe5f47acd8a87d93957629896f7bceaae7192c7c5c6674b3cd8c5e1bef6af669d9dce992a092386d9bffea5b964819cd99670027ccb9ba0a0b9e724d28adb8a7115739190ffedfbf87aced49bd967176f9087f0b7f0a7378ccbc5c539573c8685ecb6e7a86d87948887260920d8c5bfa0e5b46c909bd28c794462c79ba3fea5e77a9287d39b761e6998d6e1e1fbfb24d2d4c5996a1f7e978ceabeb6b93b8cc89bd939097c8b8dfdb1ecb264c18a848725573cd89bffadeda56b9b81dbca674862c4c5bffefba7779a96d4906c172f86dae1e2a5e7248c94c8"
+
+
+for i,v in enumerate('flag{'):
+    print(chr(bytes.fromhex(key)[i]^ord(v)),end='')
+
+
+print(xor(bytes.fromhex(key), b'myXORkey'))
