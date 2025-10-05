@@ -4,7 +4,7 @@ def gcd(a, b):
             a = a - b
         else:
             b = b - a
-    return 
+    return a
 
 
 def extended_gcd(a, b, x, y):
