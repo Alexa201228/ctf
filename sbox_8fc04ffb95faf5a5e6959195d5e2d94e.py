@@ -59,3 +59,12 @@ def matrix2bytes(matrix):
 
 print(matrix2bytes(sub_bytes(state, sbox=inv_s_box)))
 
+def change_to_be_hex(s):
+    return int(s, base=16)
+    
+def xor_two_str(str1,str2):
+    a = change_to_be_hex(str1)
+    b = change_to_be_hex(str2)
+    return hex(a ^ b)
+
+
